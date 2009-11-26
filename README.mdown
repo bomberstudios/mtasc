@@ -14,4 +14,4 @@ The GPL license does NOT imply that you source code will  have to be GPL or Open
 
 ## Notes to my (bomberstudios) fork
 
-This is a personal fork, not intended for production use. It's only aim is to be easy to compile on my platform of choice (Mac OS X)
+This is a personal fork, not intended for production use. Its only aim is to be easy to compile on my platform of choice (Mac OS X)
