@@ -1,0 +1,8 @@
+*.cmi
+*.cmo
+*.cma
+*.cmx
+*.cmxa
+*.a
+bin
+src/mtasc/lexer.ml
