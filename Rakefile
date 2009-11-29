@@ -5,3 +5,7 @@ task :clean do
     rm file
   end
 end
+
+task :default do
+  system("ocaml install.ml")
+end
