@@ -50,7 +50,7 @@ task :setup do
       mkdir_p "godi"
       Dir.chdir("godi-rocketboost-20090916") do
         system("./bootstrap")
-        system("./bootstrap_stage2")
+        system("PATH=/opt/godi/bin:/opt/godi/sbin:$PATH && ./bootstrap_stage2")
       end
     end
   end
