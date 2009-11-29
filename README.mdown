@@ -20,3 +20,8 @@ This is a personal fork, not intended for production use. Its only aim is to be 
 
 - Tristan Schmelcher <tschmelcher@google.com> - no32klimit Patch
 - Ale Muñoz <bomberstudios@gmail.com> - Mac binary
+
+
+## Install
+
+See INSTALL.mdown

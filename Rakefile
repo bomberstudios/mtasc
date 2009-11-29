@@ -15,50 +15,47 @@ desc "Install all required tools for compilation"
 task :setup do
   mkdir_p "tmp"
   Dir.chdir("tmp") do
-    work_path = Dir.pwd
-    path = ENV['PATH'] + ":#{work_path}/bin:#{work_path}/godi/bin:#{work_path}/godi/sbin"
-
     # wget
-    if File.exist? "#{work_path}/bin/wget"
+    if File.exist? "/usr/local/bin/wget"
       puts "wget is already installed"
     else
       system("curl -a -O http://ftp.gnu.org/gnu/wget/wget-1.11.4.tar.bz2")
       system("bunzip2 wget-1.11.4.tar.bz2")
-      system("tar xzf wget-1.11.4.tar")
+      system("tar xf wget-1.11.4.tar")
       Dir.chdir("wget-1.11.4") do
-        system("./configure --disable-debug --prefix=#{work_path}")
+        system("./configure")
         system("make install")
       end
     end
 
     # pcre
-    if File.exist? "#{work_path}/bin/pcregrep"
+    if File.exist? "/usr/local/bin/pcregrep"
       puts "pcre is already installed"
     else
       system("curl -a -O ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-7.9.tar.bz2")
       system("bunzip2 pcre-7.9.tar.bz2")
-      system("tar xzf pcre-7.9.tar")
+      system("tar xf pcre-7.9.tar")
       Dir.chdir("pcre-7.9") do
-        system("./configure --disable-debug --prefix=#{work_path}")
+        system("./configure")
         system("make install")
       end
     end
 
     # godi
-    if File.exist? "#{work_path}/godi/bin/ocaml"
+    if File.exist? "/opt/godi/bin/ocaml"
       puts "GODI is already installed"
     else
       system("curl -a -O http://download.camlcity.org/download/godi-rocketboost-20090916.tar.gz")
       system("tar xvzf godi-rocketboost-20090916.tar.gz")
       mkdir_p "godi"
       Dir.chdir("godi-rocketboost-20090916") do
-        system("./bootstrap --prefix #{work_path}/godi")
-        system("PATH=#{path} && ./bootstrap_stage2")
+        system("./bootstrap")
+        system("PATH=/opt/godi/bin:/opt/godi/sbin:$PATH && ./bootstrap_stage2")
       end
     end
   end
 end
 
 task :default do
-  system("PATH=$PATH:#{Dir.pwd}/tmp/godi/bin:#{Dir.pwd}/tmp/godi/sbin && ocaml install.ml")
+  system("PATH=/opt/godi/bin:/opt/godi/sbin:$PATH && ocaml install.ml")
 end
