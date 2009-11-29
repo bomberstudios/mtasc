@@ -15,18 +15,15 @@ desc "Install all required tools for compilation"
 task :setup do
   mkdir_p "tmp"
   Dir.chdir("tmp") do
-    work_path = Dir.pwd
-    path = ENV['PATH'] + ":#{work_path}/bin:#{work_path}/godi/bin:#{work_path}/godi/sbin"
-
     # wget
-    if File.exist? "#{work_path}/bin/wget"
+    if File.exist? "/usr/local/bin/wget"
       puts "wget is already installed"
     else
       system("curl -a -O http://ftp.gnu.org/gnu/wget/wget-1.11.4.tar.bz2")
       system("bunzip2 wget-1.11.4.tar.bz2")
       system("tar xf wget-1.11.4.tar")
       Dir.chdir("wget-1.11.4") do
-        system("./configure --disable-debug --prefix=#{work_path}")
+        system("./configure")
         system("make install")
       end
     end
@@ -45,20 +42,20 @@ task :setup do
     end
 
     # godi
-    if File.exist? "#{work_path}/godi/bin/ocaml"
+    if File.exist? "/opt/godi/bin/ocaml"
       puts "GODI is already installed"
     else
       system("curl -a -O http://download.camlcity.org/download/godi-rocketboost-20090916.tar.gz")
       system("tar xvzf godi-rocketboost-20090916.tar.gz")
       mkdir_p "godi"
       Dir.chdir("godi-rocketboost-20090916") do
-        system("PATH=#{path} && ./bootstrap --prefix #{work_path}/godi")
-        system("PATH=#{path} && ./bootstrap_stage2 --prefix #{work_path}/godi")
+        system("./bootstrap")
+        system("./bootstrap_stage2")
       end
     end
   end
 end
 
 task :default do
-  system("PATH=$PATH:#{Dir.pwd}/tmp/godi/bin:#{Dir.pwd}/tmp/godi/sbin && ocaml install.ml")
+  system("ocaml install.ml")
 end
