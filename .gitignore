@@ -6,3 +6,4 @@
 *.a
 bin/*
 src/mtasc/lexer.ml
+tmp
