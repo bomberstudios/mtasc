@@ -1,0 +1,11 @@
+# compiling MTASC Community Fork (1.15)
+
+- install [Homebrew](http://github.com/mxcl/homebrew/)
+- $ brew install wget
+- $ brew install pcre
+- download GODI
+- $ bootstrap
+- add /opt/godi/bin and /opt/godi/sbin to PATH
+- $ bootstrap_stage2
+- $ ocaml install.ml
+- copy bin/mtasc to a folder on your PATH
