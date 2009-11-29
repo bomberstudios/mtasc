@@ -37,7 +37,7 @@ task :setup do
     else
       system("curl -a -O ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-7.9.tar.bz2")
       system("bunzip2 pcre-7.9.tar.bz2")
-      system("tar xzf pcre-7.9.tar")
+      system("tar xf pcre-7.9.tar")
       Dir.chdir("pcre-7.9") do
         system("./configure --disable-debug --prefix=#{work_path}")
         system("make install")
