@@ -32,14 +32,14 @@ task :setup do
     end
 
     # pcre
-    if File.exist? "#{work_path}/bin/pcregrep"
+    if File.exist? "/usr/local/bin/pcregrep"
       puts "pcre is already installed"
     else
       system("curl -a -O ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-7.9.tar.bz2")
       system("bunzip2 pcre-7.9.tar.bz2")
       system("tar xf pcre-7.9.tar")
       Dir.chdir("pcre-7.9") do
-        system("./configure --disable-debug --prefix=#{work_path}")
+        system("./configure")
         system("make install")
       end
     end
@@ -53,7 +53,7 @@ task :setup do
       mkdir_p "godi"
       Dir.chdir("godi-rocketboost-20090916") do
         system("PATH=#{path} && ./bootstrap --prefix #{work_path}/godi")
-        system("PATH=#{path} && ./bootstrap_stage2")
+        system("PATH=#{path} && ./bootstrap_stage2 --prefix #{work_path}/godi")
       end
     end
   end
