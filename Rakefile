@@ -57,5 +57,5 @@ task :setup do
 end
 
 task :default do
-  system("ocaml install.ml")
+  system("PATH=/opt/godi/bin:/opt/godi/sbin:$PATH && ocaml install.ml")
 end
