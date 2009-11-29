@@ -52,7 +52,7 @@ task :setup do
       system("tar xvzf godi-rocketboost-20090916.tar.gz")
       mkdir_p "godi"
       Dir.chdir("godi-rocketboost-20090916") do
-        system("./bootstrap --prefix #{work_path}/godi")
+        system("PATH=#{path} && ./bootstrap --prefix #{work_path}/godi")
         system("PATH=#{path} && ./bootstrap_stage2")
       end
     end
