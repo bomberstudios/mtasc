@@ -24,7 +24,7 @@ task :setup do
     else
       system("curl -a -O http://ftp.gnu.org/gnu/wget/wget-1.11.4.tar.bz2")
       system("bunzip2 wget-1.11.4.tar.bz2")
-      system("tar xzf wget-1.11.4.tar")
+      system("tar xf wget-1.11.4.tar")
       Dir.chdir("wget-1.11.4") do
         system("./configure --disable-debug --prefix=#{work_path}")
         system("make install")
