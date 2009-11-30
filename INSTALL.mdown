@@ -2,4 +2,4 @@
 
 - run 'rake setup' to install wget, pcre and GODI
 - run 'rake' to compile MTASC
-- copy bin/mtasc to a folder on your PATH
+- run 'rake install' to install MTASC to /usr/local
