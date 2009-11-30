@@ -6,4 +6,5 @@ intrinsic class MovieClipLoader
 	function loadClip(url:String, target:Object):Boolean;
 	function removeListener(listener:Object):Boolean;
 	function unloadClip(target:Object):Boolean;
+	function onLoadInit(target_mc:MovieClip):Void;
 }
