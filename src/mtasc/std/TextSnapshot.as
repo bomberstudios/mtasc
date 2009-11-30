@@ -8,8 +8,5 @@ intrinsic class TextSnapshot
 	function hitTestTextNearPos(x:Number, y:Number, closeDist:Number):Number;
 	function setSelectColor(color:Number):Void;
 	function setSelected(start:Number, end:Number, select:Boolean):Void;
-
 	function getTextRunInfo(beginIndex:Number, endIndex:Number):Array;
 }
-
-
