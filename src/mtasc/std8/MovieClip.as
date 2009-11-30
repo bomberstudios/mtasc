@@ -108,7 +108,5 @@
 
 	// FLASH 9
 	var forceSmoothing : Boolean;
-	
+
 }
-
-

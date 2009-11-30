@@ -1,12 +1,12 @@
 //****************************************************************************
 // ActionScript Standard Library
-// Stage object 
+// Stage object
 //****************************************************************************
 
 intrinsic class Stage
 {
 	static var align:String;
-    static var displayState:String;
+  static var displayState:String;
 	static var height:Number;
 	static var scaleMode:String;
 	static var showMenu:Boolean;
@@ -14,6 +14,5 @@ intrinsic class Stage
 
 	static function addListener(listener:Object):Void;
 	static function removeListener(listener:Object):Boolean;
-
-    function onFullScreen(bFull:Boolean):Void;
+  function onFullScreen(bFull:Boolean):Void;
 }

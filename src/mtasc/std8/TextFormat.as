@@ -16,15 +16,10 @@ intrinsic class TextFormat
 	var blockIndent:Number;
 	var tabStops:Array;
 	var bullet:Boolean;
-	function TextFormat(font:String,size:Number,textColor:Number,
-                    	bold:Boolean,italic:Boolean,underline:Boolean,
-                    	url:String,window:String,align:String,
-                    	leftMargin:Number,rightMargin:Number,indent:Number,leading:Number);
+	function TextFormat(font:String,size:Number,textColor:Number, bold:Boolean,italic:Boolean,underline:Boolean, url:String,window:String,align:String, leftMargin:Number,rightMargin:Number,indent:Number,leading:Number);
 	function getTextExtent(text:String):Object;
 
 	// Flash8
 	var kerning:Boolean;
 	var letterSpacing:Number;
 }
-
-

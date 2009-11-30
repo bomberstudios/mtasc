@@ -33,11 +33,11 @@ dynamic intrinsic class MovieClip
 	var _y:Number;
 	var _ymouse:Number;
 	var _yscale:Number;
-	var scale9Grid:Rectangle;		
+	var scale9Grid:Rectangle;
 	var enabled:Boolean;
 	var focusEnabled:Boolean;
 	var hitArea:Object;
-	var menu:ContextMenu;	
+	var menu:ContextMenu;
 	var tabChildren:Boolean;
 	var tabEnabled:Boolean;
 	var tabIndex:Number;
@@ -89,11 +89,11 @@ dynamic intrinsic class MovieClip
 	function play():Void;
 	function prevFrame():Void;
 	function removeMovieClip():Void;
-	function setMask(mc:Object):Void; 
+	function setMask(mc:Object):Void;
 	function startDrag(lockCenter:Boolean,left:Number,top:Number,right:Number,bottom:Number):Void;
 	function stop():Void;
 	function stopDrag():Void;
-	function swapDepths(target:Object):Void; 
+	function swapDepths(target:Object):Void;
 	function unloadMovie():Void;
 	function valueOf():MovieClip;
 	function onData():Void;

@@ -15,7 +15,7 @@ intrinsic class Sound
 
 	function onID3():Void;
 	function onLoad(success:Boolean):Void;
-	function onSoundComplete():Void;	
+	function onSoundComplete():Void;
 	function attachSound(id:String):Void;
 	function getBytesLoaded():Number;
 	function getBytesTotal():Number;
