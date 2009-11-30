@@ -4,6 +4,7 @@
 *.cmx
 *.cmxa
 *.a
+*.o
 bin/*
 src/mtasc/lexer.ml
 tmp
