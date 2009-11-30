@@ -7,3 +7,4 @@
 bin/*
 src/mtasc/lexer.ml
 tmp
+pkg
