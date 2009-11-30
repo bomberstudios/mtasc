@@ -56,6 +56,23 @@ task :setup do
   end
 end
 
-task :default do
+def version
+  File.read("VERSION").chomp
+end
+
+desc "Compile MTASC"
+task :compile do
   system("PATH=/opt/godi/bin:/opt/godi/sbin:$PATH && ocaml install.ml")
 end
+
+desc "Package MTASC for release"
+task :package => :compile do
+  system("rm -Rf pkg/#{version}") if File.exist?("pkg/#{version}")
+  mkdir_p "pkg/#{version}"
+  system("cp -R bin/mtasc* pkg/#{version}/")
+  system("cp LICENSE pkg/#{version}/")
+  system("cp LICENSE pkg/#{version}/")
+  system("cp -R src/mtasc/std* pkg/#{version}/")
+end
+
+task :default => :compile
