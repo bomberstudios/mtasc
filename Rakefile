@@ -75,4 +75,12 @@ task :package => :compile do
   system("cp -R src/mtasc/std* pkg/#{version}/")
 end
 
+desc "Install MTASC to /usr/local"
+task :install => :compile do
+  system("cp bin/mtasc /usr/local/bin/mtasc-#{version}")
+  system("rm /usr/local/bin/mtasc")
+  system("ln -s /usr/local/bin/mtasc-#{version} /usr/local/bin/mtasc")
+  system("cp -R src/mtasc/std* /usr/local/bin/")
+end
+
 task :default => :compile
