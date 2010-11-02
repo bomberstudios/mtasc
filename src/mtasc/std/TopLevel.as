@@ -23,6 +23,7 @@ intrinsic class TopLevel {
 	static function setTimeout():Number;
 	static function clearTimeout(id:Number):Void;
 
+	static function MMEndCommand():Void;
 	static function MMExecute(expr:String);
 
 	// private members are not stored into _global, they need special compilation opcodes
