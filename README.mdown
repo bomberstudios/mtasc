@@ -2,11 +2,11 @@
 
 This is a fork of MTASC. The original version was built and maintained by Motion-Twin, but it is no longer updated due to Motion-Twin's new focus on haXe (http://haxe.org). The homepage for this fork is:
 
-https://sourceforge.net/projects/mtasc/
+<https://sourceforge.net/projects/mtasc/>
 
 The original Motion-Twin website is:
 
-http://www.mtasc.org
+<http://www.mtasc.org>
 
 MTASC is Licensed under the GNU General Public License (GPL) The compiler sources are available on the above websites.
 
