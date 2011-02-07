@@ -24,4 +24,4 @@ This is a personal fork, not intended for production use. Its only aim is to be 
 
 ## Install
 
-See INSTALL.mdown
+See [INSTALL.mdown](https://github.com/bomberstudios/mtasc/blob/master/INSTALL.mdown)
