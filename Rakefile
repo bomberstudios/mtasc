@@ -3,12 +3,9 @@ task :clean do
   files_to_clean = File.read('.gitignore').split("\n").map { |i| "**/#{i}"}
   p files_to_clean
   Dir.glob(files_to_clean).each do |file|
-    rm file
+    rm file if !File.directory? file
   end
-end
-
-task :rm do
-  system("rm -Rf tmp")
+  system('rm -Rf tmp')
 end
 
 desc "Install all required tools for compilation"
@@ -83,8 +80,8 @@ end
 
 desc "Install MTASC to /usr/local"
 task :install => :compile do
-  system("cp bin/mtasc /usr/local/bin/mtasc-#{version}")
   system("rm /usr/local/bin/mtasc")
+  system("cp bin/mtasc /usr/local/bin/mtasc-#{version}")
   system("ln -s /usr/local/bin/mtasc-#{version} /usr/local/bin/mtasc")
   system("cp -R src/mtasc/std* /usr/local/bin/")
 end

@@ -1,5 +1,5 @@
 # compiling MTASC Community Fork (1.15)
 
 - run 'rake setup' to install wget, pcre and GODI
-- run 'rake' to compile MTASC
-- run 'rake install' to install MTASC to /usr/local
+- run 'rake install' to compile MTASC and install it to /usr/local/bin
+
